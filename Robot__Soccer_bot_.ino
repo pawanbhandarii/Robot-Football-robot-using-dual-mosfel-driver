@@ -13,9 +13,9 @@ void setup() {
     Serial.begin(9600);
     BTserial.begin(9600);
     
-     pinMode(IN1, OUTPUT);
-     pinMode(IN2, OUTPUT);
-     pinMode(ENA, OUTPUT);
+     pinMode(IN1, OUTPUT); //INT1 AND INT2  are used for left motor
+     pinMode(IN2, OUTPUT); //INT2 and INT 3 are used for right motor
+     pinMode(ENA, OUTPUT); 
 
      pinMode(IN4, OUTPUT);
      pinMode(IN3, OUTPUT);
@@ -24,7 +24,7 @@ void setup() {
 void loop() {
   
   bt=BTserial.read();
-  //BACKWAED 
+  //BACKWARD 
   if(bt=='B'){
   digitalWrite(IN1,HIGH);
   digitalWrite(IN2,LOW);
